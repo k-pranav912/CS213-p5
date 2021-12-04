@@ -12,15 +12,16 @@
                 android:layout_height="164dp"
                 android:gravity="start|top"
                 android:ems="10"
-                android:id="@+id/editTextTextMultiLine" android:autofillHints=""
-                tools:ignore="Deprecated,LabelFor" android:editable="false" android:inputType="textMultiLine"/>
+                android:id="@+id/orderDisplay"
+                tools:ignore="Autofill,Deprecated,LabelFor" android:editable="false" android:inputType="textMultiLine"/>
         <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="43dp" android:id="@+id/spinner"/>
         <Button
-                android:text= "@string/removePizza"
+                android:text="@string/removePizza"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/button2" android:layout_marginHorizontal="10dp"/>
+                android:layout_height="wrap_content" android:id="@+id/button2" android:layout_marginHorizontal="10dp"
+                android:onClick="removePizza"/>
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -33,7 +34,7 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="201dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="50dp" android:inputType="none"/>
+                    android:layout_marginEnd="50dp" android:inputType="none" android:id="@+id/subtotal"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
@@ -48,7 +49,7 @@
                     android:layout_width="201dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="50dp" android:inputType="none" android:editable="false"
-                    tools:ignore="Deprecated"/>
+                    tools:ignore="Deprecated" android:id="@+id/salestax"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
@@ -63,12 +64,12 @@
                     android:layout_width="201dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="50dp" android:inputType="none" android:editable="false"
-                    tools:ignore="Deprecated"/>
+                    tools:ignore="Deprecated" android:id="@+id/total"/>
         </LinearLayout>
         <Button
                 android:text="@string/placeOrder"
                 android:layout_width="match_parent"
                 android:layout_height="25dp" android:id="@+id/button3" android:layout_weight="1"
-                android:layout_marginHorizontal="10dp"/>
+                android:layout_marginHorizontal="10dp" android:onClick="placeOrder"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
