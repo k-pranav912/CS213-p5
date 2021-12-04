@@ -29,12 +29,12 @@
             <TextView
                     android:text="TextView"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/textView6" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:id="@+id/textView13" android:layout_weight="1"
                     android:gravity="right"/>
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="201dp"
                     android:layout_height="wrap_content"
-                    android:hint="hint" android:layout_marginRight="50dp"/>
+                    android:hint="hint" android:layout_marginRight="50dp" android:editable="false"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
@@ -43,7 +43,7 @@
             <TextView
                     android:text="TextView"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/textView6" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:layout_weight="1"
                     android:gravity="right"/>
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="201dp"
@@ -57,7 +57,7 @@
             <TextView
                     android:text="TextView"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/textView6" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:layout_weight="1"
                     android:gravity="right"/>
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="201dp"
