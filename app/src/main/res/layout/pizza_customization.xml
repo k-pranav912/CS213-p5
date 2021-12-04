@@ -9,15 +9,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         <TextView
-                android:text="TextView"
+                android:text="@string/flavor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/textView5" android:gravity="center"/>
         <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="149dp" tools:srcCompat="@tools:sample/avatars"
-                android:id="@+id/imageView2"/>
+                android:src="@drawable/deluxe" android:id="@+id/s1ImageView" android:contentDescription="@string/pizza"/>
         <TextView
-                android:text="TextView"
+                android:text="@string/sizes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/textView" android:layout_marginTop="10dp"
                 android:gravity="center"/>
@@ -29,21 +29,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="61dp" android:orientation="horizontal" android:gravity="center">
                 <RadioButton
-                        android:text="RadioButton"
+                        android:text="@string/small"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/radioButton10"/>
+                        android:layout_height="wrap_content" android:id="@+id/radioButton10" android:checked="true"
+                        android:onClick="selectSmall"/>
                 <RadioButton
-                        android:text="RadioButton"
+                        android:text="@string/medium"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/radioButton11"/>
+                        android:layout_height="wrap_content" android:id="@+id/radioButton11"
+                        android:onClick="selectMedium"/>
                 <RadioButton
-                        android:text="RadioButton"
+                        android:text="@string/large"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/radioButton12"/>
+                        android:layout_height="wrap_content" android:id="@+id/radioButton12"
+                        android:onClick="selectLarge"/>
             </RadioGroup>
         </LinearLayout>
         <TextView
-                android:text="TextView"
+                android:text="@string/toppings"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/textView4" android:gravity="center"
                 android:layout_marginTop="5dp"/>
@@ -52,59 +55,64 @@
                 android:layout_height="wrap_content" app:rowCount="3" app:columnCount="3"
                 android:layout_gravity="center">
             <CheckBox
-                    android:text="CheckBox"
+                    android:text="@string/pepperoniTopping"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/checkBox"/>
+                    android:layout_height="wrap_content" android:id="@+id/pepperoniCheck"
+                    android:onClick="pepperoniClick"/>
             <CheckBox
-                    android:text="CheckBox"
+                    android:text="@string/pineappleTopping"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/checkBox2"/>
+                    android:layout_height="wrap_content" android:id="@+id/pineappleCheck"
+                    android:onClick="pineappleClick"/>
             <CheckBox
-                    android:text="CheckBox"
+                    android:text="@string/chickenTopping"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/checkBox3"/>
+                    android:layout_height="wrap_content" android:id="@+id/chickenCheck" android:onClick="chickenClick"/>
             <CheckBox
-                    android:text="CheckBox"
+                    android:text="@string/hamTopping"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/checkBox4"/>
+                    android:layout_height="wrap_content" android:id="@+id/hamCheck" android:onClick="hamClick"/>
             <CheckBox
-                    android:text="CheckBox"
+                    android:text="@string/beefTopping"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/checkBox5"/>
+                    android:layout_height="wrap_content" android:id="@+id/beefCheck" android:onClick="beefClick"/>
             <CheckBox
-                    android:text="CheckBox"
+                    android:text="@string/olivesTopping"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/checkBox6"/>
+                    android:layout_height="wrap_content" android:id="@+id/oliveCheck" android:onClick="olivesClick"/>
             <CheckBox
-                    android:text="CheckBox"
+                    android:text="@string/extraCheeseTopping"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/checkBox7"/>
+                    android:layout_height="wrap_content" android:id="@+id/extraCheeseCheck"
+                    android:onClick="extraCheeseClick"/>
             <CheckBox
-                    android:text="CheckBox"
+                    android:text="@string/greenPepperTopping"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/checkBox8"/>
+                    android:layout_height="wrap_content" android:id="@+id/greenPepperCheck"
+                    android:onClick="greenPepperClick"/>
             <CheckBox
-                    android:text="CheckBox"
+                    android:text="@string/onionTopping"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/checkBox9"/>
+                    android:layout_height="wrap_content" android:id="@+id/onionCheck" android:onClick="onionClick"/>
         </androidx.gridlayout.widget.GridLayout>
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             <TextView
-                    android:text="TextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/textView6" android:layout_weight="1"
-                    android:gravity="right"/>
+                    android:text="@string/price"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:id="@+id/textView13" android:layout_weight="1"
+                    android:gravity="end"/>
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="201dp"
                     android:layout_height="wrap_content"
-                    android:hint="hint" android:layout_marginRight="50dp"/>
+                    android:layout_marginEnd="50dp" android:id="@+id/s1PriceTextField"/>
         </LinearLayout>
         <Button
-                android:text="Button"
+                android:text="@string/addToOrder"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/button" android:layout_marginTop="20dp"/>
+                android:layout_height="wrap_content" android:id="@+id/button" android:layout_marginTop="20dp"
+                android:onClick="addToOrder"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

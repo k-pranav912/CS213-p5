@@ -1,3 +1,38 @@
 <resources>
     <string name="app_name">Pizza Store</string>
+    <string name="phoneNum">Enter Phone Number:</string>
+    <string name="zeros">0000000000</string>
+    <string name="startOrder">Start Order</string>
+    <string name="addPizza">Add Pizza</string>
+    <string name="pepperoni">Pepperoni</string>
+    <string name="hawaiian">Hawaiian</string>
+    <string name="deluxe">Deluxe</string>
+    <string name="checkOrder">Check Current Order</string>
+    <string name="checkStore">Check Store Orders</string>
+    <string name="flavor">Flavor</string>
+    <string name="small">Small</string>
+    <string name="medium">Medium</string>
+    <string name="large">Large</string>
+    <string name="pepperoniTopping">Pepperoni</string>
+    <string name="pineappleTopping">Pineapple</string>
+    <string name="chickenTopping">Chicken</string>
+    <string name="hamTopping">Ham</string>
+    <string name="beefTopping">Beef</string>
+    <string name="olivesTopping">Olives</string>
+    <string name="extraCheeseTopping">Extra Cheese</string>
+    <string name="greenPepperTopping">Green Pepper</string>
+    <string name="onionTopping">Onion</string>
+    <string name="sizes">Sizes</string>
+    <string name="toppings">Toppings</string>
+    <string name="price">Price: </string>
+    <string name="addToOrder">Add To Order</string>
+    <string name="pizza">Pizza</string>
+    <string name="removePizza">Remove Pizza</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="salesTax">Sales Tax</string>
+    <string name="total">Total</string>
+    <string name="placeOrder">Place Order</string>
+    <string name="removeOrder">Remove Order</string>
+
+
 </resources>
