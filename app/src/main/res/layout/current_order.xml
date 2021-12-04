@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
                                                    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
                                                    android:layout_height="match_parent">
 
@@ -11,15 +10,15 @@
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="164dp"
-                android:inputType="textMultiLine"
                 android:gravity="start|top"
                 android:ems="10"
-                android:id="@+id/editTextTextMultiLine"/>
+                android:id="@+id/editTextTextMultiLine" android:autofillHints=""
+                tools:ignore="Deprecated,LabelFor" android:editable="false" android:inputType="textMultiLine"/>
         <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="43dp" android:id="@+id/spinner"/>
         <Button
-                android:text="Button"
+                android:text= "@string/removePizza"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/button2" android:layout_marginHorizontal="10dp"/>
         <LinearLayout
@@ -27,45 +26,47 @@
                 android:layout_width="match_parent"
                 android:layout_height="74dp">
             <TextView
-                    android:text="TextView"
-                    android:layout_width="wrap_content"
+                    android:text="@string/subtotal"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content" android:id="@+id/textView13" android:layout_weight="1"
-                    android:gravity="right"/>
+                    android:gravity="end"/>
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="201dp"
                     android:layout_height="wrap_content"
-                    android:hint="hint" android:layout_marginRight="50dp" android:editable="false"/>
+                    android:layout_marginEnd="50dp" android:inputType="none"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="8dp" android:layout_weight="1">
             <TextView
-                    android:text="TextView"
-                    android:layout_width="wrap_content"
+                    android:text="@string/salesTax"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content" android:layout_weight="1"
-                    android:gravity="right"/>
+                    android:gravity="end" tools:ignore="NestedWeights"/>
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="201dp"
                     android:layout_height="wrap_content"
-                    android:hint="hint" android:layout_marginRight="50dp"/>
+                    android:layout_marginEnd="50dp" android:inputType="none" android:editable="false"
+                    tools:ignore="Deprecated"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="80dp">
             <TextView
-                    android:text="TextView"
-                    android:layout_width="wrap_content"
+                    android:text="@string/total"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content" android:layout_weight="1"
-                    android:gravity="right"/>
+                    android:gravity="end"/>
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="201dp"
                     android:layout_height="wrap_content"
-                    android:hint="hint" android:layout_marginRight="50dp"/>
+                    android:layout_marginEnd="50dp" android:inputType="none" android:editable="false"
+                    tools:ignore="Deprecated"/>
         </LinearLayout>
         <Button
-                android:text="Button"
+                android:text="@string/placeOrder"
                 android:layout_width="match_parent"
                 android:layout_height="25dp" android:id="@+id/button3" android:layout_weight="1"
                 android:layout_marginHorizontal="10dp"/>

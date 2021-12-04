@@ -27,7 +27,12 @@
     <string name="price">Price: </string>
     <string name="addToOrder">Add To Order</string>
     <string name="pizza">Pizza</string>
-
+    <string name="removePizza">Remove Pizza</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="salesTax">Sales Tax</string>
+    <string name="total">Total</string>
+    <string name="placeOrder">Place Order</string>
+    <string name="removeOrder">Remove Order</string>
 
 
 </resources>
