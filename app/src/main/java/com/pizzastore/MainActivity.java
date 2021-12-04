@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.store = new StoreOrders();
+        s0PhoneTextField = findViewById(R.id.s0PhoneTextField);
     }
 
     public void setOrderNull() { this.currentOrder = null; }
@@ -56,21 +57,21 @@ public class MainActivity extends AppCompatActivity {
 
     public void addPepperoni(View view) {
         Intent intent = new Intent(this, PizzaActivity.class);
-        intent.putExtra("FLAVOR", "pepperoni");
+        intent.putExtra("FLAVOR", "Pepperoni");
         intent.putExtra("CURRENT_ORDER", currentOrder);
         startActivity(intent);
     }
 
     public void addHawaiian(View view) {
         Intent intent = new Intent(this, PizzaActivity.class);
-        intent.putExtra("FLAVOR", "hawaiian");
+        intent.putExtra("FLAVOR", "Hawaiian");
         intent.putExtra("CURRENT_ORDER", currentOrder);
         startActivity(intent);
     }
 
     public void addDeluxe(View view) {
         Intent intent = new Intent(this, PizzaActivity.class);
-        intent.putExtra("FLAVOR", "deluxe");
+        intent.putExtra("FLAVOR", "Deluxe");
         intent.putExtra("CURRENT_ORDER", currentOrder);
         startActivity(intent);
     }
@@ -78,13 +79,13 @@ public class MainActivity extends AppCompatActivity {
     public void checkCurrentOrder(View view) {
         Intent intent = new Intent(this, OrderActivity.class);
         intent.putExtra("CURRENT_ORDER", currentOrder);
-        intent.putExtra("StoreOrders", store);
+        intent.putExtra("STORE_ORDERS", store);
         startActivity(intent);
     }
 
     public void checkStoreOrders(View view) {
         Intent intent = new Intent(this, StoreOrderActivity.class);
-        intent.putExtra("StoreOrders", store);
+        intent.putExtra("STORE_ORDERS", store);
         startActivity(intent);
     }
 }

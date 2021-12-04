@@ -59,5 +59,5 @@ public abstract class Pizza {
      * Abstract method to get the path to the image of the pizza
      * @return String path to pizza image
      */
-    public abstract String getImagePath();
+    public abstract int getImageID();
 }
