@@ -1,9 +1,11 @@
 package com.pizzastore;
 
+import java.io.Serializable;
+
 /**
  * Class of Pepperoni flavored pizza, which contains its own price and toString() implementation
  */
-public class Hawaiian extends Pizza{
+public class Hawaiian extends Pizza implements Serializable {
     private static final double SMALL_PRICE = 10.99;
     private static final int MIN_TOPPINGS = 2;
     private static final int IMAGE_ID = R.drawable.hawaiian;

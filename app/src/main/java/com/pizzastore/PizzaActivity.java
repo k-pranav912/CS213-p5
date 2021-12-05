@@ -1,6 +1,7 @@
 package com.pizzastore;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -9,9 +10,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.io.Serializable;
 import java.text.DecimalFormat;
 
-public class PizzaActivity extends AppCompatActivity {
+public class PizzaActivity extends AppCompatActivity implements Serializable {
     private Pizza pizza;
     private static final DecimalFormat df = new DecimalFormat("0.00");
     private Order currentOrder;
@@ -51,6 +53,7 @@ public class PizzaActivity extends AppCompatActivity {
         setImage();
         selectPresets();
         currentOrder = (Order) getIntent().getSerializableExtra("CURRENT_ORDER");
+        //this.currentOrder = (Order) bundle.getSerializable("ORDER");
         //NEED TO CHANGE APP NAME
     }
 
@@ -220,6 +223,7 @@ public class PizzaActivity extends AppCompatActivity {
 
     public void addToOrder(View view) {
         currentOrder.add(pizza);
+        System.out.println(currentOrder);
         finish();
     }
 

@@ -1,9 +1,11 @@
 package com.pizzastore;
 
+import java.io.Serializable;
+
 /**
  * Enumertated class for the pizza sizes: small, medium, or large
  */
-public enum Size {
+public enum Size implements Serializable {
     SMALL, MEDIUM, LARGE;
 
     /**

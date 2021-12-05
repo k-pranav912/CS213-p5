@@ -1,12 +1,13 @@
 package com.pizzastore;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Abstract class that all flavors of pizza inherit. Contains common methods, instance variables and
  * three abstract methods, toString(), getImagePath(), and price().
  */
-public abstract class Pizza {
+public abstract class Pizza implements Serializable {
     protected ArrayList<Topping> toppings = new ArrayList<Topping>();
     protected Size size;
 

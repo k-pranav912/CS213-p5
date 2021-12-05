@@ -1,9 +1,11 @@
 package com.pizzastore;
 
+import java.io.Serializable;
+
 /**
  * Enumerated class for the 11 available toppings
  */
-public enum Topping {
+public enum Topping implements Serializable {
     PEPPERONI, PINEAPPLE, CHICKEN, BEEF, HAM, OLIVES, EXTRA_CHEESE, GREEN_PEPPER, ONION;
 
     /**

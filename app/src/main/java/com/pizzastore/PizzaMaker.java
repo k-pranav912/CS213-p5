@@ -1,9 +1,11 @@
 package com.pizzastore;
 
+import java.io.Serializable;
+
 /**
  * Class that creates a flavored pizza based on a string describing the flavor
  */
-public class PizzaMaker {
+public class PizzaMaker implements Serializable {
     /**
      * Creates the appropriate pizza based on the flavor string
      * @param flavor Type of pizza desired

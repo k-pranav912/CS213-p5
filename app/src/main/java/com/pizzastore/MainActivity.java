@@ -8,7 +8,9 @@ import  androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.google.android.material.textfield.TextInputEditText;
 
-public class MainActivity extends AppCompatActivity {
+import java.io.Serializable;
+
+public class MainActivity extends AppCompatActivity implements Serializable {
 
     private StoreOrders store;
     private Order currentOrder;
@@ -77,6 +79,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void checkCurrentOrder(View view) {
+        if (this.currentOrder == null) {
+            Toast.makeText(getApplicationContext(), "Please create an order first.", Toast.LENGTH_LONG).show();
+            return;
+        }
         Intent intent = new Intent(this, OrderActivity.class);
         intent.putExtra("CURRENT_ORDER", currentOrder);
         intent.putExtra("STORE_ORDERS", store);

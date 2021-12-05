@@ -3,12 +3,17 @@ package com.pizzastore;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.EditText;
 import com.google.android.material.textfield.TextInputEditText;
 
-public class OrderActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class OrderActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, Serializable {
 
     private Order currentOrder;
     private StoreOrders store;
@@ -37,6 +42,15 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
         subtotalText.setText(currentOrder.getSubTotal() + "");
         salesTaxText.setText(currentOrder.getSalesTax() + "");
         totalText.setText(currentOrder.getTotal() + "");
+
+        ArrayList<String> arr = new ArrayList<>(Arrays.asList("abcd", "efgh", "ijkl", "mnop"));
+        System.out.println(currentOrder);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, arr);
+        //ArrayAdapter<Pizza> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, currentOrder.getList());
+        //ArrayAdapter<Pizza> adapter = ArrayAdapter.createFromResource(this, currentOrder.getList(), android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
 
     }
 
