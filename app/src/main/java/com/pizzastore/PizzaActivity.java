@@ -30,6 +30,10 @@ public class PizzaActivity extends AppCompatActivity implements Serializable {
     private CheckBox greenPepperCheck;
     private CheckBox onionCheck;
 
+    /**
+     * Initializes the UI, title, pizza, toppings, and image based on the flavor of pizza. Links the views.
+     * @param savedInstanceState Saved instance of previous app loads
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,10 +59,16 @@ public class PizzaActivity extends AppCompatActivity implements Serializable {
         selectPresets();
     }
 
+    /**
+     * Sets the image at the top of the UI based on the flavor of pizza
+     */
     private void setImage() {
         s1ImageView.setImageResource(pizza.getImageID());
     }
 
+    /**
+     * Deselects all checkboxes, then selects the ones which are preset by the pizza
+     */
     private void selectPresets() {
         pepperoniCheck.setChecked(false);
         pineappleCheck.setChecked(false);
@@ -69,7 +79,6 @@ public class PizzaActivity extends AppCompatActivity implements Serializable {
         extraCheeseCheck.setChecked(false);
         greenPepperCheck.setChecked(false);
         onionCheck.setChecked(false);
-
         for (Topping x: pizza.toppings) {
             switch (x) {
                 case PEPPERONI:
@@ -103,6 +112,11 @@ public class PizzaActivity extends AppCompatActivity implements Serializable {
         }
     }
 
+    /**
+     * Adds the topping to the pizza if applicable
+     * @param checkBox Checkbox to be deselected if it exceeds max toppings
+     * @param topping Topping to be added
+     */
     private void addTopping(CheckBox checkBox, Topping topping) {
         if (pizza.toppings.size() >= Pizza.MAX_TOPPINGS) {
             Context context = getApplicationContext();
@@ -113,6 +127,11 @@ public class PizzaActivity extends AppCompatActivity implements Serializable {
             pizza.toppings.add(topping);
         }
     }
+
+    /**
+     * On checking pepperoni, add the topping. On unchecking pepperoni, remove the topping. Re-calculate price
+     * @param view View the user interacted with, Pepperoni Checkbox
+     */
     public void pepperoniClick(View view) {
         if (pepperoniCheck.isChecked()) {
             addTopping(pepperoniCheck, Topping.PEPPERONI);
@@ -123,6 +142,10 @@ public class PizzaActivity extends AppCompatActivity implements Serializable {
         s1PriceTextField.setText(df.format(this.pizza.price()) + "");
     }
 
+    /**
+     * On checking pineapple, add the topping. On unchecking pineapple, remove the topping. Re-calculate price
+     * @param view View the user interacted with, Pineapple Checkbox
+     */
     public void pineappleClick(View view) {
         if (pineappleCheck.isChecked()) {
             addTopping(pineappleCheck, Topping.PINEAPPLE);
@@ -133,6 +156,10 @@ public class PizzaActivity extends AppCompatActivity implements Serializable {
         s1PriceTextField.setText(df.format(this.pizza.price()) + "");
     }
 
+    /**
+     * On checking chicken, add the topping. On unchecking chicken, remove the topping. Re-calculate price
+     * @param view View the user interacted with, Chicken Checkbox
+     */
     public void chickenClick(View view) {
         if (chickenCheck.isChecked()) {
             addTopping(chickenCheck, Topping.CHICKEN);
@@ -143,6 +170,10 @@ public class PizzaActivity extends AppCompatActivity implements Serializable {
         s1PriceTextField.setText(df.format(this.pizza.price()) + "");
     }
 
+    /**
+     * On checking ham, add the topping. On unchecking ham, remove the topping. Re-calculate price
+     * @param view View the user interacted with, Ham Checkbox
+     */
     public void hamClick(View view) {
         if (hamCheck.isChecked()) {
             addTopping(hamCheck, Topping.HAM);
@@ -153,6 +184,10 @@ public class PizzaActivity extends AppCompatActivity implements Serializable {
         s1PriceTextField.setText(df.format(this.pizza.price()) + "");
     }
 
+    /**
+     * On checking beef, add the topping. On unchecking beef, remove the topping. Re-calculate price
+     * @param view View the user interacted with, Beef Checkbox
+     */
     public void beefClick(View view) {
         if (beefCheck.isChecked()) {
             addTopping(beefCheck, Topping.BEEF);
@@ -163,6 +198,10 @@ public class PizzaActivity extends AppCompatActivity implements Serializable {
         s1PriceTextField.setText(df.format(this.pizza.price()) + "");
     }
 
+    /**
+     * On checking olives, add the topping. On unchecking olives, remove the topping. Re-calculate price
+     * @param view View the user interacted with, Olives Checkbox
+     */
     public void olivesClick(View view) {
         if (olivesCheck.isChecked()) {
             addTopping(olivesCheck, Topping.OLIVES);
@@ -173,6 +212,10 @@ public class PizzaActivity extends AppCompatActivity implements Serializable {
         s1PriceTextField.setText(df.format(this.pizza.price()) + "");
     }
 
+    /**
+     * On checking extra cheese, add the topping. On unchecking extra cheese, remove the topping. Re-calculate price
+     * @param view View the user interacted with, Extra Cheese Checkbox
+     */
     public void extraCheeseClick(View view) {
         if (extraCheeseCheck.isChecked()) {
             addTopping(extraCheeseCheck, Topping.EXTRA_CHEESE);
@@ -183,6 +226,10 @@ public class PizzaActivity extends AppCompatActivity implements Serializable {
         s1PriceTextField.setText(df.format(this.pizza.price()) + "");
     }
 
+    /**
+     * On checking green pepper, add the topping. On unchecking green pepper, remove the topping. Re-calculate price
+     * @param view View the user interacted with, Green Pepper Checkbox
+     */
     public void greenPepperClick(View view) {
         if (greenPepperCheck.isChecked()) {
             addTopping(greenPepperCheck, Topping.GREEN_PEPPER);
@@ -193,6 +240,10 @@ public class PizzaActivity extends AppCompatActivity implements Serializable {
         s1PriceTextField.setText(df.format(this.pizza.price()) + "");
     }
 
+    /**
+     * On checking onion, add the topping. On unchecking onion, remove the topping. Re-calculate price
+     * @param view View the user interacted with, Onion Checkbox
+     */
     public void onionClick(View view) {
         if (onionCheck.isChecked()) {
             addTopping(onionCheck, Topping.ONION);
@@ -203,24 +254,38 @@ public class PizzaActivity extends AppCompatActivity implements Serializable {
         s1PriceTextField.setText(df.format(this.pizza.price()) + "");
     }
 
+    /**
+     * Sets the pizza size to small and recalculates price
+     * @param view View the user interacted with, Small Radiobutton
+     */
     public void selectSmall(View view) {
         pizza.setSize(Size.SMALL);
         s1PriceTextField.setText(df.format(this.pizza.price()) + "");
     }
 
+    /**
+     * Sets the pizza size to medium and recalculates price
+     * @param view View the user interacted with, Medium Radiobutton
+     */
     public void selectMedium(View view) {
         pizza.setSize(Size.MEDIUM);
         s1PriceTextField.setText(df.format(this.pizza.price()) + "");
     }
 
+    /**
+     * Sets the pizza size to Large and recalculates price
+     * @param view View the user interacted with, Large Radiobutton
+     */
     public void selectLarge(View view) {
         pizza.setSize(Size.LARGE);
         s1PriceTextField.setText(df.format(this.pizza.price()) + "");
     }
 
+    /**
+     * Adds the pizza to the current order and finishes the activity.
+     * @param view View the user interacted with, Add to Order Button
+     */
     public void addToOrder(View view) {
-        //currentOrder.add(pizza);
-        //System.out.println(currentOrder);
         MainActivity.addPizza(pizza);
         finish();
     }
