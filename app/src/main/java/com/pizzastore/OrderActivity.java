@@ -11,6 +11,10 @@ import com.google.android.material.textfield.TextInputEditText;
 import java.io.Serializable;
 import java.text.DecimalFormat;
 
+/**
+ * OrderActivity class, handles the activity view for the Current Order page.
+ * @authors Neel Prabhu, Saipranav Kalapala
+ */
 public class OrderActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, Serializable {
 
     private EditText orderDisplay;
@@ -21,6 +25,10 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
     private ArrayAdapter<Pizza> adapter;
     private static final DecimalFormat df = new DecimalFormat("0.00");
 
+    /**
+     * Constructor method, called when view is initiated.
+     * @param savedInstanceState saved instance of view, used if app is reloaded.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,12 +49,19 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
 
     }
 
+    /**
+     * sets prices on display for each field: subtotal, sales tax, total price.
+     */
     private void setPrices() {
         subtotalText.setText(df.format(MainActivity.getCurrentOrder().getSubTotal()) + "");
         salesTaxText.setText(df.format(MainActivity.getCurrentOrder().getSalesTax()) + "");
         totalText.setText(df.format(MainActivity.getCurrentOrder().getTotal()) + "");
     }
 
+    /**
+     * Removes pizza from the store's current order.
+     * @param view Button view
+     */
     public void removePizza(View view) {
         Pizza pizza = (Pizza) spinner.getSelectedItem();
         MainActivity.getCurrentOrder().remove(pizza);
@@ -60,15 +75,30 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
         }
     }
 
+    /**
+     * Finalizes and adds the store's current order to the store order page.
+     * @param view Button view
+     */
     public void placeOrder(View view) {
         MainActivity.addOrder(MainActivity.getCurrentOrder());
         finish();
     }
 
+    /**
+     *  Implement abstract method needed for spinner.
+     * @param parent parent AdapterView instance
+     * @param view View
+     * @param position position in the Adapter
+     * @param id
+     */
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
     }
 
+    /**
+     * Implement abstract method needed for spinner.
+     * @param parent parent AdapterView
+     */
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
     }

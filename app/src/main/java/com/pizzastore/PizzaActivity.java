@@ -219,8 +219,6 @@ public class PizzaActivity extends AppCompatActivity implements Serializable {
     }
 
     public void addToOrder(View view) {
-        //currentOrder.add(pizza);
-        //System.out.println(currentOrder);
         MainActivity.addPizza(pizza);
         finish();
     }
