@@ -17,6 +17,10 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
     private TextInputEditText s0PhoneTextField;
 
+    /**
+     * Initializes the savedInstanceState, UI, the user's store order, and
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
