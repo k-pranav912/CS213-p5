@@ -50,16 +50,8 @@ public abstract class Pizza implements Serializable {
     }
 
     /**
-     * Gets the maximum number of toppings
-     * @return Maximum toppings int
-     */
-    public int getMaxToppings() {
-        return this.MAX_TOPPINGS;
-    }
-
-    /**
      * Abstract method to get the path to the image of the pizza
-     * @return String path to pizza image
+     * @return ImageID in res/drawable
      */
     public abstract int getImageID();
 }

@@ -55,7 +55,7 @@ public class Hawaiian extends Pizza implements Serializable {
 
     /**
      * Method to get the path to the image of the pizza
-     * @return String path to pizza image
+     * @return ImageID in res/drawable
      */
     public int getImageID() {
         return IMAGE_ID;
