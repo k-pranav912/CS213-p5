@@ -20,7 +20,8 @@
         <Button
                 android:text="@string/removeOrder"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/removeOrderButton" android:layout_marginHorizontal="10dp"
-        />
+                android:layout_height="wrap_content" android:id="@+id/removeOrderButton"
+                android:layout_marginHorizontal="10dp"
+                android:onClick="removeOrder"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

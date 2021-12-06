@@ -58,6 +58,10 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     }
 
     public void addPepperoni(View view) {
+        if (this.currentOrder == null) {
+            Toast.makeText(getApplicationContext(), "Please create an order first.", Toast.LENGTH_LONG).show();
+            return;
+        }
         Intent intent = new Intent(this, PizzaActivity.class);
         intent.putExtra("FLAVOR", "Pepperoni");
         intent.putExtra("CURRENT_ORDER", currentOrder);
@@ -65,6 +69,10 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     }
 
     public void addHawaiian(View view) {
+        if (this.currentOrder == null) {
+            Toast.makeText(getApplicationContext(), "Please create an order first.", Toast.LENGTH_LONG).show();
+            return;
+        }
         Intent intent = new Intent(this, PizzaActivity.class);
         intent.putExtra("FLAVOR", "Hawaiian");
         intent.putExtra("CURRENT_ORDER", currentOrder);
@@ -72,6 +80,10 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     }
 
     public void addDeluxe(View view) {
+        if (this.currentOrder == null) {
+            Toast.makeText(getApplicationContext(), "Please create an order first.", Toast.LENGTH_LONG).show();
+            return;
+        }
         Intent intent = new Intent(this, PizzaActivity.class);
         intent.putExtra("FLAVOR", "Deluxe");
         intent.putExtra("CURRENT_ORDER", currentOrder);
@@ -103,6 +115,14 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     public static void addOrder(Order order) {
         store.add(order);
         currentOrder = null;
+    }
+
+    public static Order getCurrentOrder() {
+        return currentOrder;
+    }
+
+    public static StoreOrders getStore() {
+        return store;
     }
 
 }

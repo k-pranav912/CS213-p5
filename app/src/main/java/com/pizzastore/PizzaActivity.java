@@ -17,7 +17,6 @@ import java.text.DecimalFormat;
 public class PizzaActivity extends AppCompatActivity implements Serializable {
     private Pizza pizza;
     private static final DecimalFormat df = new DecimalFormat("0.00");
-    private Order currentOrder;
 
     private TextInputEditText s1PriceTextField;
     private ImageView s1ImageView;
@@ -54,7 +53,6 @@ public class PizzaActivity extends AppCompatActivity implements Serializable {
         s1PriceTextField.setText(df.format(this.pizza.price()) + "");
         setImage();
         selectPresets();
-        currentOrder = (Order) getIntent().getSerializableExtra("CURRENT_ORDER");
     }
 
     private void setImage() {
