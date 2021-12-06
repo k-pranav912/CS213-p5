@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 /**
  * Class that creates a flavored pizza based on a string describing the flavor
+ * @authors Neel Prabhu, Saipranav Kalapala
  */
 public class PizzaMaker implements Serializable {
     /**

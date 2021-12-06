@@ -1,8 +1,6 @@
 package com.pizzastore;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -14,6 +12,10 @@ import com.google.android.material.textfield.TextInputEditText;
 import java.io.Serializable;
 import java.text.DecimalFormat;
 
+/**
+ * Pizza Activity class, which handles the pizza customization activity
+ * @authors Neel Prabhu, Saipranav Kalapala
+ */
 public class PizzaActivity extends AppCompatActivity implements Serializable {
     private Pizza pizza;
     private static final DecimalFormat df = new DecimalFormat("0.00");

@@ -11,6 +11,10 @@ import com.google.android.material.textfield.TextInputEditText;
 import java.io.IOException;
 import java.io.Serializable;
 
+/**
+ * Main Activity class, which handles the main menu activity
+ * @authors Neel Prabhu, Saipranav Kalapala
+ */
 public class MainActivity extends AppCompatActivity implements Serializable {
 
     private static StoreOrders store;

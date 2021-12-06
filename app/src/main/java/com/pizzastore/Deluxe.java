@@ -3,7 +3,8 @@ package com.pizzastore;
 import java.io.Serializable;
 
 /**
- * Class of Pepperoni flavored pizza, which contains its own price and toString() implementation
+ * Class of Deluxe flavored pizza, which contains its own price and toString() implementation
+ * @authors Neel Prabhu, Saipranav Kalapala
  */
 public class Deluxe extends Pizza implements Serializable {
     private static final double SMALL_PRICE = 12.99;

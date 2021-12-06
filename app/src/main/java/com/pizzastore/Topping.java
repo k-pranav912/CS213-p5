@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 /**
  * Enumerated class for the 11 available toppings
+ * @authors Neel Prabhu, Saipranav Kalapala
  */
 public enum Topping implements Serializable {
     PEPPERONI, PINEAPPLE, CHICKEN, BEEF, HAM, OLIVES, EXTRA_CHEESE, GREEN_PEPPER, ONION;

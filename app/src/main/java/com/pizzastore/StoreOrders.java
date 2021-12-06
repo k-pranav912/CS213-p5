@@ -6,6 +6,7 @@ import java.text.DecimalFormat;
 
 /**
  * StoreOrders class, which contains a list of orders the user placed.
+ * @authors Neel Prabhu, Saipranav Kalapala
  */
 public class StoreOrders implements Serializable {
     ArrayList<Order> orders;

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 /**
  * Order class, which contains a list of pizzas and a unique phone number identifier
+ * @authors Neel Prabhu, Saipranav Kalapala
  */
 public class Order implements Serializable {
     private long phoneNumber;

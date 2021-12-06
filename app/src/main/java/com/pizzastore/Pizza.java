@@ -6,6 +6,7 @@ import java.util.ArrayList;
 /**
  * Abstract class that all flavors of pizza inherit. Contains common methods, instance variables and
  * three abstract methods, toString(), getImagePath(), and price().
+ * @authors Neel Prabhu, Saipranav Kalapala
  */
 public abstract class Pizza implements Serializable {
     protected ArrayList<Topping> toppings = new ArrayList<Topping>();

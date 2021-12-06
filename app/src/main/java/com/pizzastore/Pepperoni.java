@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 /**
  * Class of Pepperoni flavored pizza, which contains its own price and toString() implementation
+ * @authors Neel Prabhu, Saipranav Kalapala
  */
 public class Pepperoni extends Pizza implements Serializable {
     private static final double SMALL_PRICE = 8.99;
