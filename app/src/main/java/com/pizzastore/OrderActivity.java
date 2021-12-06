@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.widget.EditText;
 import com.google.android.material.textfield.TextInputEditText;
 import java.io.Serializable;
+import java.text.DecimalFormat;
 
 public class OrderActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, Serializable {
 
@@ -18,6 +19,7 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
     private TextInputEditText totalText;
     private Spinner spinner;
     private ArrayAdapter<Pizza> adapter;
+    private static final DecimalFormat df = new DecimalFormat("0.00");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,14 +33,18 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
         spinner = findViewById(R.id.spinner);
 
         orderDisplay.setText(MainActivity.getCurrentOrder().toString());
-        subtotalText.setText(MainActivity.getCurrentOrder().getSubTotal() + "");
-        salesTaxText.setText(MainActivity.getCurrentOrder().getSalesTax() + "");
-        totalText.setText(MainActivity.getCurrentOrder().getTotal() + "");
+        setPrices();
 
         adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, MainActivity.getCurrentOrder().getList());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
+    }
+
+    private void setPrices() {
+        subtotalText.setText(df.format(MainActivity.getCurrentOrder().getSubTotal()) + "");
+        salesTaxText.setText(df.format(MainActivity.getCurrentOrder().getSalesTax()) + "");
+        totalText.setText(df.format(MainActivity.getCurrentOrder().getTotal()) + "");
     }
 
     public void removePizza(View view) {
@@ -48,7 +54,7 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
         spinner.setAdapter(adapter);
         orderDisplay.getText().clear();
         orderDisplay.setText(MainActivity.getCurrentOrder().toString());
-        System.out.println(MainActivity.getCurrentOrder().toString());
+        setPrices();
         if (MainActivity.getCurrentOrder().getList().size() == 0) {
             finish();
         }

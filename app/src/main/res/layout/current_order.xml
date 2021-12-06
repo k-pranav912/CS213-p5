@@ -12,8 +12,8 @@
                 android:layout_height="164dp"
                 android:gravity="start|top"
                 android:ems="10"
-                android:id="@+id/orderDisplay"
-                tools:ignore="Autofill,Deprecated,LabelFor" android:inputType="none"/>
+                tools:ignore="Autofill,Deprecated,LabelFor" android:inputType="none" android:editable="false"
+                android:id="@+id/orderDisplay"/>
         <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="43dp" android:id="@+id/spinner"/>

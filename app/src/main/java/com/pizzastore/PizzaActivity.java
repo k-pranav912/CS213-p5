@@ -100,14 +100,13 @@ public class PizzaActivity extends AppCompatActivity implements Serializable {
                     onionCheck.setChecked(true);
                     break;
             }
-            System.out.println(x);
         }
     }
 
     private void addTopping(CheckBox checkBox, Topping topping) {
         if (pizza.toppings.size() >= Pizza.MAX_TOPPINGS) {
             Context context = getApplicationContext();
-            Toast.makeText(context, "Maximum of " + Pizza.MAX_TOPPINGS + " toppings allowed!", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Maximum of " + Pizza.MAX_TOPPINGS + " toppings allowed!", Toast.LENGTH_SHORT).show();
             checkBox.setChecked(false);
         }
         else {

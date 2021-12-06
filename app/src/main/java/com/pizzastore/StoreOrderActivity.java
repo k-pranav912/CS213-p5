@@ -29,8 +29,6 @@ public class StoreOrderActivity extends AppCompatActivity implements AdapterView
         adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, MainActivity.getStore().getList());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         storeOrderSpinner.setAdapter(adapter);
-
-
     }
 
     public void removeOrder(View view) {

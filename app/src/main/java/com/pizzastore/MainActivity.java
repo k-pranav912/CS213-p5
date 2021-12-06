@@ -25,41 +25,41 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         s0PhoneTextField = findViewById(R.id.s0PhoneTextField);
     }
 
-    public void setOrderNull() { this.currentOrder = null; }
-
     public void startNewOrder(View view) throws NumberFormatException {
+        System.out.println(currentOrder);
         currentOrder = null;
         Context context = getApplicationContext();
         String temp = s0PhoneTextField.getText().toString();
         long phoneNumber = 0;
+
         if (temp.equals(""))
-            Toast.makeText(context, "Enter Valid Phone Number (Numbers Only)", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Enter Valid Phone Number (Numbers Only)", Toast.LENGTH_SHORT).show();
 
         try {
             phoneNumber = Long.parseLong(temp);
         } catch (NumberFormatException e) {
-            Toast.makeText(context, "Enter Valid Phone Number (Numbers Only)", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Enter Valid Phone Number (Numbers Only)", Toast.LENGTH_SHORT).show();
             return;
         }
 
         if (phoneNumber < 0) {
-            Toast.makeText(context, "Enter Valid Phone Number (Numbers Only)", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Enter Valid Phone Number (Numbers Only)", Toast.LENGTH_SHORT).show();
             return;
         }
 
         this.currentOrder = new Order(phoneNumber);
 
         if (store.checkOrder(this.currentOrder)) {
-            Toast.makeText(context, "Order " + phoneNumber + " already exists.", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Order " + phoneNumber + " already exists.", Toast.LENGTH_SHORT).show();
             currentOrder = null;
             return;
         }
-        Toast.makeText(context, "Order " + phoneNumber + " started.", Toast.LENGTH_LONG).show();
+        Toast.makeText(context, "Order " + phoneNumber + " started.", Toast.LENGTH_SHORT).show();
     }
 
     public void addPepperoni(View view) {
         if (this.currentOrder == null) {
-            Toast.makeText(getApplicationContext(), "Please create an order first.", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Please create an order first.", Toast.LENGTH_SHORT).show();
             return;
         }
         Intent intent = new Intent(this, PizzaActivity.class);
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
     public void addHawaiian(View view) {
         if (this.currentOrder == null) {
-            Toast.makeText(getApplicationContext(), "Please create an order first.", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Please create an order first.", Toast.LENGTH_SHORT).show();
             return;
         }
         Intent intent = new Intent(this, PizzaActivity.class);
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
     public void addDeluxe(View view) {
         if (this.currentOrder == null) {
-            Toast.makeText(getApplicationContext(), "Please create an order first.", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Please create an order first.", Toast.LENGTH_SHORT).show();
             return;
         }
         Intent intent = new Intent(this, PizzaActivity.class);
@@ -92,7 +92,11 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
     public void checkCurrentOrder(View view) {
         if (this.currentOrder == null) {
-            Toast.makeText(getApplicationContext(), "Please create an order first.", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Please create an order first.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (this.currentOrder.getList().isEmpty()) {
+            Toast.makeText(getApplicationContext(), "Empty Order.", Toast.LENGTH_SHORT).show();
             return;
         }
         Intent intent = new Intent(this, OrderActivity.class);
