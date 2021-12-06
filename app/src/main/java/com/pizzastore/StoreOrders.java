@@ -93,4 +93,8 @@ public class StoreOrders implements Serializable {
         }
         return storeOrdersString;
     }
+
+    public ArrayList<Order> getList() {
+        return this.orders;
+    }
 }

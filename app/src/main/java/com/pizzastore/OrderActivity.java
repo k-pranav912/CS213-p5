@@ -8,15 +8,11 @@ import android.widget.Spinner;
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.EditText;
 import com.google.android.material.textfield.TextInputEditText;
-
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class OrderActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, Serializable {
 
     private Order currentOrder;
-    private StoreOrders store;
 
     private EditText orderDisplay;
     private TextInputEditText subtotalText;
@@ -30,7 +26,6 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
         setContentView(R.layout.current_order);
 
         currentOrder = (Order) getIntent().getSerializableExtra("CURRENT_ORDER");
-        store = (StoreOrders) getIntent().getSerializableExtra("STORE_ORDERS");
 
         orderDisplay = findViewById(R.id.orderDisplay);
         subtotalText = findViewById(R.id.subtotal);
@@ -43,12 +38,7 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
         salesTaxText.setText(currentOrder.getSalesTax() + "");
         totalText.setText(currentOrder.getTotal() + "");
 
-        ArrayList<String> arr = new ArrayList<>(Arrays.asList("abcd", "efgh", "ijkl", "mnop"));
-        System.out.println(currentOrder);
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, arr);
-        //ArrayAdapter<Pizza> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, currentOrder.getList());
-        //ArrayAdapter<Pizza> adapter = ArrayAdapter.createFromResource(this, currentOrder.getList(), android.R.layout.simple_spinner_item);
+        ArrayAdapter<Pizza> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, currentOrder.getList());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
@@ -59,7 +49,8 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
     }
 
     public void placeOrder(View view) {
-
+        MainActivity.addOrder(currentOrder);
+        finish();
     }
 
     @Override

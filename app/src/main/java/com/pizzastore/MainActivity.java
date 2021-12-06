@@ -12,8 +12,8 @@ import java.io.Serializable;
 
 public class MainActivity extends AppCompatActivity implements Serializable {
 
-    private StoreOrders store;
-    private Order currentOrder;
+    private static StoreOrders store;
+    private static Order currentOrder;
 
     private TextInputEditText s0PhoneTextField;
 
@@ -48,13 +48,13 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         }
 
         this.currentOrder = new Order(phoneNumber);
-        Toast.makeText(context, "Order " + phoneNumber + " started.", Toast.LENGTH_LONG).show();
 
         if (store.checkOrder(this.currentOrder)) {
             Toast.makeText(context, "Order " + phoneNumber + " already exists.", Toast.LENGTH_LONG).show();
             currentOrder = null;
             return;
         }
+        Toast.makeText(context, "Order " + phoneNumber + " started.", Toast.LENGTH_LONG).show();
     }
 
     public void addPepperoni(View view) {
@@ -94,4 +94,15 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         intent.putExtra("STORE_ORDERS", store);
         startActivity(intent);
     }
+
+    public static void addPizza(Pizza pizza) {
+        currentOrder.add(pizza);
+        System.out.println(currentOrder);
+    }
+
+    public static void addOrder(Order order) {
+        store.add(order);
+        currentOrder = null;
+    }
+
 }

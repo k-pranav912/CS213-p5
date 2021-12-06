@@ -12,15 +12,15 @@
                 android:layout_height="267dp"
                 android:gravity="start|top"
                 android:ems="10"
-                android:id="@+id/editTextTextMultiLine2" android:inputType="none" android:editable="false"
+                android:id="@+id/storeOrderDisplay" android:inputType="none" android:editable="false"
                 tools:ignore="Autofill,Deprecated,LabelFor"/>
         <Spinner
                 android:layout_width="match_parent"
-                android:layout_height="40dp" android:id="@+id/spinner2"/>
+                android:layout_height="40dp" android:id="@+id/storeOrderSpinner"/>
         <Button
                 android:text="@string/removeOrder"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/button10" android:layout_marginHorizontal="10dp"
+                android:layout_height="wrap_content" android:id="@+id/removeOrderButton" android:layout_marginHorizontal="10dp"
         />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

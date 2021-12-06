@@ -1,5 +1,6 @@
 package com.pizzastore;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -35,7 +36,8 @@ public class PizzaActivity extends AppCompatActivity implements Serializable {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pizza_customization);
         this.pizza = PizzaMaker.createPizza(getIntent().getStringExtra("FLAVOR"));
-        System.out.println(getIntent().getStringExtra("FLAVOR"));
+
+        setTitle(getIntent().getStringExtra("FLAVOR"));
 
         s1PriceTextField = findViewById(R.id.s1PriceTextField);
         s1ImageView = findViewById(R.id.s1ImageView);
@@ -53,8 +55,6 @@ public class PizzaActivity extends AppCompatActivity implements Serializable {
         setImage();
         selectPresets();
         currentOrder = (Order) getIntent().getSerializableExtra("CURRENT_ORDER");
-        //this.currentOrder = (Order) bundle.getSerializable("ORDER");
-        //NEED TO CHANGE APP NAME
     }
 
     private void setImage() {
@@ -222,8 +222,9 @@ public class PizzaActivity extends AppCompatActivity implements Serializable {
     }
 
     public void addToOrder(View view) {
-        currentOrder.add(pizza);
-        System.out.println(currentOrder);
+        //currentOrder.add(pizza);
+        //System.out.println(currentOrder);
+        MainActivity.addPizza(pizza);
         finish();
     }
 

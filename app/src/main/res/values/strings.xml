@@ -33,6 +33,10 @@
     <string name="total">Total</string>
     <string name="placeOrder">Place Order</string>
     <string name="removeOrder">Remove Order</string>
+    <string name="mainMenu">Main Menu</string>
+    <string name="currentOrder">Current Order</string>
+    <string name="storeOrders">Store Orders</string>
+
 
 
 </resources>
